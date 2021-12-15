@@ -6,7 +6,9 @@
         <div class="mydiv1">
             <label class="lbl1">아이디</label>
             <input type="text" placeholder="아이디" v-model="userid" ref="userid" />
+            <div class="btn1">
             <input type="button" value="중복확인" id="btnIdCheck" />
+            </div>
         </div>
 
         <div class="mydiv1">
@@ -42,8 +44,12 @@
 
         <div class="mydiv1">
             <label class="lbl1"></label>
-            <input type="button" value="회원가입" id=btn1 @click="handleLogin" />
-            <a href="login.html"><input type="button" value="로그인" /></a>
+            <div class="btn1">
+                <input type="button" value="회원가입" id=btn1 @click="handleLogin" />
+            </div>
+            <div class="btn1">
+                <a href="login.html"><input type="button" value="로그인" /></a>
+            </div>
         </div>
     </div>
     </div>
@@ -70,9 +76,9 @@
                         return false;
                     }
                     if(this.userpw !== this.userpw1) {
-                    alert('암호가 일치하지 않습니다.')
-                    this.$refs.userpw1.focus();
-                    return false;
+                        alert('암호가 일치하지 않습니다.')
+                        this.$refs.userpw1.focus();
+                        return false;
                     }
                     if(this.name === ""){
                         alert('이름을 입력하세요.')

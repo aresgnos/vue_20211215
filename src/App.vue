@@ -11,7 +11,7 @@
       <router-link to="/">홈화면</router-link> /
       <router-link to="login">로그인</router-link> /
       <router-link to="join">회원가입</router-link> /
-      <router-link to="board">게시판</router-link> /
+      <router-link to="board">게시판</router-link> 
       </nav>
     </div>
 
