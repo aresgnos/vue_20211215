@@ -50,10 +50,12 @@ footer {
     
 }
 
-section::after{
-    content:"";
-    clear: both;
-    display: block;
+body {
+    height: 100%;
+}
+
+section{
+    flex:1;
 }
 
 ul {
@@ -72,6 +74,7 @@ table {
 tbody {
     text-align: center;
 }
+
 
 
  .mydiv {

@@ -9,12 +9,12 @@
          -->
         <div class="mydiv1">
         <label class="lbl1">아이디</label>
-        <input type="text" v-model="userid" ref="userid" />
+        <input type="text" v-model="member.userid" ref="userid" />
         </div>
 
         <div class="mydiv1">
         <label class="lbl1">암호</label>
-        <input type="password" v-model="userpw" ref="userpw" />
+        <input type="password" v-model="member.userpw" ref="userpw" />
         </div>
 
         <div class="mydiv1">
@@ -61,8 +61,12 @@
         // 상태 (state 변수 설정)
         data() {
             return {
-                userid : 'aaa',
-                userpw : 'bbb',
+                // userid : 'aaa',
+                // userpw : 'bbb',
+                member : {
+                     userid : 'aaa',
+                     userpw : 'bbb',
+                } //위에 것을 member 하나로 묶어서 던진다.
             }
         }
     // 이 위치에서 백엔드로 값을 전송해서 로그인   

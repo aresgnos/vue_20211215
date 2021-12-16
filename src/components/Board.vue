@@ -7,44 +7,70 @@
             <thead>
                 <tr>
                 <th>번호</th>
+                <th>아이디</th>
                 <th>이름</th>
-                <th>나이</th>
                 <th>연락처</th>
                 <th>이메일</th>   
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>김딸기</td>
-                    <td>22</td>
-                    <td>010-1111-2222</td>
-                    <td>a1@hanmail.net</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>정사과</td>
-                    <td>25</td>
-                    <td>010-2222-3333</td>
-                    <td>a2@hanmail.net</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>송귤</td>
-                    <td>28</td>
-                    <td>010-3333-5555</td>
-                    <td>a3@hanmail.net</td>
-                </tr>
-                
+                <tr v-for="(tmp, idx) in items" v-bind:key="tmp">
+                 <td>{{idx+1}}</td>
+                 <td>{{tmp.id}}</td>
+                 <td>{{tmp.name}}</td>
+                 <td>{{tmp.tel}}</td>
+                 <td v-text="tmp.email"></td>
+                </tr>   
             </tbody>
         </table>
+
+        <div>
+            <label v-for="tmp in pages" v-bind:key="tmp">
+                <button @click="handleBoard(tmp)">{{ tmp }}</button>
+            </label>    
+        </div> 
+
     </div>
+
 </template>
 
 <script>
     export default {
+
+        // 생명주기 (자동으로 호출되는 역할)
+        created(){
+            // 백엔드에서 필요한 데이터를 받는 경우
+            console.log('1. created');
+            this.handleBoard(1); //메소드 호출
+        },
+        mounted(){
+            // 화면의 변화를 주기 위해 하는 경우
+            console.log('2. mounted');
+        },
+
+        // 상태변수(state)
+        data() {
+            return {
+                pages: 12,
+                items: [],
+            }
+        },
         
+        //누군가에 의해 호출되어지는 함수, 메소드, 기능
+        methods : {
+            handleBoard(page) {
+                console.log('handleBoard 메소드', page);
+                // 백엔드에서 데이터를 받음
+                // state변수 items에 데이터를 넣음
+
+                this.items = [
+                    {id:'a', name:'가', tel:page, email:'a@a.com'},
+                    {id:'b', name:'나', tel:page, email:'b@a.com'},
+                    {id:'c', name:'다', tel:page, email:'c@a.com'},
+                ];
+            }
+        }    
     }
 </script>
 

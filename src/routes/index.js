@@ -7,6 +7,11 @@ import Login from '@/components/Login.vue';
 import Join from '@/components/Join.vue';
 import Board from '@/components/Board.vue';
 import Form from '@/components/Form.vue';
+import Iris from '@/components/Iris.vue';
+import Iris1 from '@/components/Iris1.vue';
+import Exam10 from '@/components/Exam10.vue';
+import Exam21 from '@/components/Exam21.vue';
+import Admin from '@/components/Admin.vue';
 
 // 2. URL과 함께 사용할 컴포넌트 연결
 const routes = [
@@ -20,7 +25,11 @@ const routes = [
     { path:'/board', name:"Board", component:Board },
     // localhost:8080/form
     { path:'/form', name:"Form", component:Form, },
-    
+    { path:'/iris', name:"Iris", component:Iris, },
+    { path:'/iris1', name:"Iris1", component:Iris1, },
+    { path:'/exam10', name:"Exam10", component:Exam10, },
+    { path:'/exam21', name:"Exam21", component:Exam21, },
+    { path:'/admin', name:"Admin", component:Admin, },
 ];
   
 const router = createRouter({

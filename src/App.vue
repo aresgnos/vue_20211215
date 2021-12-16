@@ -1,5 +1,6 @@
 <template>
   <div class="container1">
+    <section>
     <header>
     <h3>header</h3>
     </header>
@@ -20,6 +21,7 @@
     <footer>
     <h3>footer</h3>
     </footer>
+    </section>
   </div>
 </template>
 

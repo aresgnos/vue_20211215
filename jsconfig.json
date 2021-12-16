@@ -1,0 +1,2 @@
+/* ventur extension 설치 */
+{ "include": ["./src/**/*"]}
