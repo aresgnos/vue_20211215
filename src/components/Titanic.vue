@@ -6,8 +6,8 @@
                 <td v-for="tmp in items.fields" v-bind:key="tmp">
                     {{tmp.name}}
                 </td>
-                <td v-for="tmp in items.survived" v-bind:key="tmp">
-                    {{tmp.}}
+                <td v-for="tmp in a.survived" v-bind:key="tmp">
+                   
                 </td>
             
             </tr>
@@ -25,6 +25,7 @@
         data(){
             return{
                 items:[],
+                a:[],
             }
         },
 
