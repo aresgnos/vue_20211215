@@ -104,30 +104,30 @@
                     console.log('watch=userid:', e);
                 }
             },
-        userpw : {
+            userpw : {
+                    handler(e){ 
+                        console.log('watch=userpw:', e);
+                    }
+                },
+            userpw1 : {
                 handler(e){ 
-                    console.log('watch=userpw:', e);
+                    console.log('watch=userpw1:', e);
                 }
             },
-        userpw1 : {
-            handler(e){ 
-                console.log('watch=userpw1:', e);
-            }
-        },
-        name : {
-            handler(e){ 
-                console.log('watch=name:', e);
-            }
-        },
-        email : {
-            handler(e){ 
-                console.log('watch=email:', e);
-            }
-        },
-        chk : {
-            handler(e){ 
-                console.log('watch=chk:', e);
-            }
+            name : {
+                handler(e){ 
+                    console.log('watch=name:', e);
+                }
+            },
+            email : {
+                handler(e){ 
+                    console.log('watch=email:', e);
+                }
+            },
+            chk : {
+                handler(e){ 
+                    console.log('watch=chk:', e);
+                }
         },
         },         
         // 상태 (state 변수 설정)

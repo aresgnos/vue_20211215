@@ -45,18 +45,23 @@
 
         // 상태변수의 변화를 감지
         watch : {
-            userid : {
-                handler(e){ 
-                    console.log('watch=userid:', e);
+            // userid : {
+            //     handler(e){ 
+            //         console.log('watch=userid:', e);
 
-                }
-            },
-        userpw : {
-                handler(e){ 
-                    console.log('watch=userpw:', e);
+            //     }
+            // },
+            // userpw : {
+            //     handler(e){ 
+            //         console.log('watch=userpw:', e);
 
+            //     }
+            // },
+            member : {
+                handler(e){
+                    console.log('watch=member:', e);
                 }
-            },
+            }
         },         
         // 상태 (state 변수 설정)
         data() {
