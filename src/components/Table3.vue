@@ -52,7 +52,7 @@
         },
         methods:{
             handlePlus(idx){
-                console.log("Table.vue => handPlus", idx);
+                console.log("Table3.vue => handlePlus", idx);
                 this.items[idx]['total']=
                     this.items[idx].num1 +
                     this.items[idx].num2 +
