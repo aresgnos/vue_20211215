@@ -1,57 +1,71 @@
 <template>
-    <div>
-        <div class="container">
+
+    <div class="container">
         <h3>회원가입</h3>
         <hr />
-        <div class="mydiv1">
-            <label class="lbl1">아이디</label>
-            <input type="text" placeholder="아이디" v-model="userid" ref="userid" />
-            <div class="btn1">
-            <input type="button" value="중복확인" id="btnIdCheck" />
-            </div>
-        </div>
 
-        <div class="mydiv1">
-            <label class="lbl1">암호</label>
-            <input type="password" placeholder="암호" v-model="userpw" ref="userpw" />
-        </div>
+        <div style="width : 800px; padding:20px;">
+            <el-form label-width="120px">
+            
+                <el-form :inline="true" label-width="120px">
+                    <el-form-item  label="아이디">
+                        <el-input v-model="userid"></el-input>
+                    </el-form-item>
+                    <el-form-item label="">
+                        <el-button type="primary">중복확인</el-button>
+                    </el-form-item>
+                </el-form>    
 
-        <div class="mydiv1">
-            <label class="lbl1">암호확인</label>
-            <input type="password" placeholder="암호확인" v-model="userpw1" ref="userpw1" />
-        </div>
 
-        <div class="mydiv1">
-            <label class="lbl1">이름</label>
-            <input type="text" placeholder="이름" v-model="name" ref="name" />
-        </div>
-    
-        <div class="mydiv1">
-            <label class="lbl1">이메일</label>
-            <input type="text" placeholder="이메일" v-model="email" ref="email" />
-            <label>@</label>
-            <select>
-            <option>naver.com</option>
-            <option>daum.net</option>
-            <option>gmail.com</option>
-            </select>
-        </div>
+                <el-form-item label="암호">
+                        <el-input v-model="userpw" show-password></el-input>
+                </el-form-item>
 
-        <div class="mydiv1">
-            <label class="lbl1">약관동의</label>
-            <input type="checkbox" v-model="chk" /><label>약관동의</label>
-        </div>
+                <el-form-item label="암호확인">
+                        <el-input v-model="userpw1" show-password></el-input>
+                </el-form-item>
 
-        <div class="mydiv1">
-            <label class="lbl1"></label>
-            <div class="btn1">
-                <input type="button" value="회원가입" id=btn1 @click="handleLogin" />
-            </div>
-            <div class="btn1">
-                <a href="login.html"><input type="button" value="로그인" /></a>
-            </div>
+                <el-form-item label="이름">
+                        <el-input v-model="name"></el-input>
+                </el-form-item>
+
+
+
+                <el-form  :inline="true" label-width="120px">
+                    <el-form-item label="이메일">
+                        <el-input v-model="email"></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="">
+                        <label>@</label>
+                    </el-form-item>    
+
+                    <el-form-item label="">
+                        <el-select v-model="value" placeholder="Select">
+                            <el-option>
+                            <v-for="options" :key="tmp"
+                            :label="options.label"
+                            :value="options.value">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                </el-form>    
+
+
+
+                <el-form-item label="">
+                    <el-checkbox v-model="chk" label="약관동의">
+                </el-checkbox>
+                </el-form-item>
+
+                <el-form-item label="">
+                <el-button type="primary" @click="handleLogin">회원가입</el-button>
+                <el-button type="primary">로그인</el-button>
+                </el-form-item>
+            
+
+            </el-form>
         </div>
-    </div>
     </div>
 </template>
 
@@ -139,12 +153,24 @@
                 name:"",
                 email:"",
                 chk:"",
-            }
-        }
+    
+                options: [
+                    { value: 'Option1', label: 'hanmail.net',},
+                    { value: 'Option2', label: 'Option2',},
+                    { value: 'Option3', label: 'Option3',},
+                    { value: 'Option4', label: 'Option4',},
+                    { value: 'Option5', label: 'Option5',} , 
+                ],
+                value:''
+                
+    }
+  },
+            
+       
     // 이 위치에서 백엔드로 값을 전송해서 로그인   
     }
 </script>
 
-<style scoped>
-@import '../assets/css/mystyle1.css';
+<style>
+
 </style>

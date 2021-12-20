@@ -7,21 +7,23 @@
         <!-- {{ userid }} <br />
         {{ userpw }} <br />
          -->
-        <div class="mydiv1">
-        <label class="lbl1">아이디</label>
-        <input type="text" v-model="member.userid" ref="userid" />
-        </div>
+        <div style="width : 400px;">
+            
+        <el-form label-width="120px">
+            <el-form-item label="아이디">
+                    <el-input v-model="member.userid"></el-input>
+            </el-form-item>
 
-        <div class="mydiv1">
-        <label class="lbl1">암호</label>
-        <input type="password" v-model="member.userpw" ref="userpw" />
-        </div>
+            <el-form-item label="암호">
+                    <el-input v-model="member.userpw" show-password></el-input>
+            </el-form-item>
 
-        <div class="mydiv1">
-        <label class="btn"></label>
-        <input type="button" value="로그인" id="btn1" @click="handleLogin" />
-        </div>
+            <el-form-item label="">
+            <el-button type="primary" @click="handleLogin">로그인</el-button>
+            </el-form-item>
+        </el-form>
         
+        </div>
     </div>
 </template>
 
@@ -80,6 +82,6 @@
 
 
 <style scoped>
-@import '../assets/css/mystyle1.css';
+/* @import '../assets/css/mystyle1.css'; */
 
 </style>

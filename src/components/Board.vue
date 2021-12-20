@@ -75,5 +75,5 @@
 </script>
 
 <style scoped>
-@import '../assets/css/mystyle1.css';
+/* @import '../assets/css/mystyle1.css'; */
 </style>
