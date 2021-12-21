@@ -21,11 +21,15 @@ import Table3 from '@/components/Table3.vue';
 import CompProp from '@/components/CompProp.vue';
 import Admin1 from '@/components/Admin1.vue';
 import CompSlot from '@/components/CompSlot.vue';
-
+import Upload1 from '@/components/Upload1.vue';
+import CompSlotScope from '@/components/CompSlotScope.vue';
 
 
 // 2. URL과 함께 사용할 컴포넌트 연결
 const routes = [
+    { path:'/upload1', name:"Upload1", component:Upload1 },
+
+    { path:'/compslotscope', name:"CompSlotScope", component:CompSlotScope },
     { path:'/compprop', name:"CompProp", component:CompProp },
     { path:'/compslot', name:"CompSlot", component:CompSlot, },
     

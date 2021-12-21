@@ -8,7 +8,7 @@
             <el-form label-width="120px">
             
                 <el-form :inline="true" label-width="120px">
-                    <el-form-item  label="아이디">
+                    <el-form-item label="아이디">
                         <el-input v-model="userid"></el-input>
                     </el-form-item>
                     <el-form-item label="">
@@ -42,10 +42,10 @@
 
                     <el-form-item label="">
                         <el-select v-model="value" placeholder="Select">
-                            <el-option>
-                            <v-for="options" :key="tmp"
-                            :label="options.label"
-                            :value="options.value">
+                            <el-option v-for="item in options" 
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
                             </el-option>
                         </el-select>
                     </el-form-item>
@@ -152,15 +152,14 @@
                 userpw1: "",
                 name:"",
                 email:"",
-                chk:"",
+                chk:"false",
     
                 options: [
                     { value: 'Option1', label: 'hanmail.net',},
-                    { value: 'Option2', label: 'Option2',},
-                    { value: 'Option3', label: 'Option3',},
-                    { value: 'Option4', label: 'Option4',},
-                    { value: 'Option5', label: 'Option5',} , 
+                    { value: 'Option2', label: 'naver.com',},
+                    { value: 'Option3', label: 'google.com',},
                 ],
+
                 value:''
                 
     }
@@ -172,5 +171,12 @@
 </script>
 
 <style>
+.container {
+     background-color: #ffffff;
+     padding:50px;
+}
 
+hr {
+    border : 2px solid #e9eef3;
+}
 </style>

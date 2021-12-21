@@ -7,7 +7,7 @@
         <!-- {{ userid }} <br />
         {{ userpw }} <br />
          -->
-        <div style="width : 400px;">
+        <div style="width:400px; padding:20px;">
             
         <el-form label-width="120px">
             <el-form-item label="아이디">
@@ -82,6 +82,14 @@
 
 
 <style scoped>
-/* @import '../assets/css/mystyle1.css'; */
+.container {
+     background-color: #ffffff;
+     padding:50px;
+}
+
+hr {
+    border : 2px solid #e9eef3;
+}
+
 
 </style>

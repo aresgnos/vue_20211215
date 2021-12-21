@@ -2,6 +2,18 @@
     <div>
         <h4>메뉴1</h4>
         <h5>물품등록</h5>
+
+        <el-table :data="code" size="mini" style="width: 100%">
+            <el-table-column label="아이디">
+                <template #default="tmp">     <!--items=scope, scope.row.id=tmp -->
+                    <el-input size="mini" type="text" v-model="code[tmp]" />
+                </template>
+            </el-table-column>
+        </el-table>
+     
+
+
+
             <input type="button" @click="addCount" value="항목추가" />
             <input type="button" @click="subCount" value="항목삭제" />
             
@@ -28,14 +40,11 @@
         
         data(){
             return {
-
                 count : 5,
                 code : [],
                 name : [],
                 price : [],
-                quantity : [],
-
-                         
+                quantity : []
             }
         },
 
