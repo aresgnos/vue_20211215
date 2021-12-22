@@ -1,7 +1,8 @@
 <template>
   <div>
   
-    <el-container>
+  <!-- 고객용 페이지 레이아웃 -->
+    <el-container v-if="admin === false">
       <el-header>
         <el-menu :default-active="defaultActive"
             class="el-menu-demo"
@@ -15,7 +16,6 @@
         <el-menu-item index="2">Login</el-menu-item>
         <el-menu-item index="3">Join</el-menu-item>
         <el-menu-item index="4">My page</el-menu-item>
-
         <el-sub-menu index="5">
           <template #title>Board</template>
           <el-menu-item index="5-1">Table1</el-menu-item>
@@ -28,7 +28,7 @@
             <el-menu-item index="2-4-3">item three</el-menu-item>
           </el-sub-menu>
         </el-sub-menu>
-        <el-menu-item index="6" disabled>Info</el-menu-item>
+        <el-menu-item index="6">Info</el-menu-item>
         <el-menu-item index="7">Orders</el-menu-item>
         </el-menu>
         </el-header>
@@ -45,7 +45,15 @@
   
     </el-container>
 
-    
+  <!-- 관리자 페이지 -->
+    <el-container v-else-if="admin === true">
+      <el-header>Header</el-header>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+      <el-footer>Footer</el-footer>
+    </el-container>
+  
     
 
     
@@ -57,13 +65,35 @@
 
 <script>
 export default {
+
+  //F5 수행시 실행(redux === store === vuex)
+  created (){
+    this.handleAdmin();
+
+  },
+
+
   data(){
     return {
-      defaultActive:'1',
+      defaultActive:'100',
+      admin : false,
     }
   },
 
   methods:{
+
+    handleAdmin(){
+      // 주소창의 정보를 읽기
+      console.log(window.location.pathname);
+      if ( window.location.pathname === '/admin1' ||
+            window.location.pathname === '/admin'  ) {
+        this.admin = true;
+        }
+      else {
+        this.admin = false;
+       }
+      },
+
     handleSelect(idx){
       console.log('App.vue => handleSelect', idx)
       if (idx === '1'){
@@ -86,6 +116,9 @@ export default {
       }
       else if(idx === '5-3'){
         this.$router.push({path:'/form'});
+      }
+      else if (idx === '8'){
+        window.location.href="/admin1";
       }
     }
   }
